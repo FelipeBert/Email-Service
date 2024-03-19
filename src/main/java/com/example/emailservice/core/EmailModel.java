@@ -2,18 +2,23 @@ package com.example.emailservice.core;
 
 import com.example.emailservice.DTO.EmailSendDTO;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "TABLE_EMAIL")
 public class EmailModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
     private String ownerRef;
     private String emailFrom;
     private String emailTo;
